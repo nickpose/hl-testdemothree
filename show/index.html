@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>聚合页面 改版</title>
+	<meta charset="UTF-8"/>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<style type="text/css">
+		html a{
+		  -webkit-tap-highlight-color: transparent;
+		}
+		body,p,a{
+			margin: 0;
+			padding: 0;
+		}
+		em{
+			font-style: normal;
+		}
+		ul,li{
+			list-style: none;
+		  	margin: 0;padding: 0;
+		}
+		.clearfix {
+		  	zoom: 1;
+		}
+		.clearfix:before,
+		.clearfix:after {
+		  	content: '';
+		  	display: table;
+		}
+		.clearfix:after {
+		  	clear: both;
+		}
+		a,a:hover,area{ 
+		  	text-decoration: none;
+		  	display: block;
+		}
+		img {
+		  	display: block;
+			border: none;
+		  	width: 100%;
+		}
+		.wb-hl-wrap{
+			width: 100%;
+			background: #b29a89;
+			margin: 0 auto;
+			font-family: 'PingFang SC', 'PingFangSC-Light', 'Droid Sans', sans-serif;
+		}
+		.hl-main{
+			width: 96%;
+			margin: 0 auto;
+		}
+		.pro-list{
+		}
+		.pro-kind{
+			margin-bottom: 0.8rem;
+			padding-bottom: 0.2rem;
+		}
+		.hl-header{
+			background: #fff1ca;
+			border-top-left-radius: 0.3rem;
+			border-top-right-radius: 0.3rem;
+			position: relative;
+		}
+		.title{
+			width: 7rem;
+			font-size: 0.56rem;
+			line-height: 0.7rem;
+			color: #8a5f3b;
+			font-weight: bold;
+			margin-left: 2.3rem;
+			padding-top: 0.2rem;
+		}
+		.f-tit{
+			width: 2.3rem;
+			float: left;
+			display: block;
+		}
+		.f-tit-three{
+			width: 1.9rem;
+		}
+		.z-tit{
+			width: 3.5rem;
+			display: block;
+			float: left;
+			margin-left: 0.1rem;
+		}
+		.line{
+			width: 1.06rem;
+			display: block;
+			border-bottom: 1px solid #8a5f3b;
+			float: left;
+			height: 0.3rem;
+		}
+		.logolist{
+			padding: 0.3rem 0;
+		}
+		.logokind{
+			width:4.26rem;
+			line-height: 1rem;
+			text-align: center;	 
+			color: #fff;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			float: left;
+			margin-left: 0.37rem;
+			margin-top: 0.1rem;
+		}
+		.hl-left{
+			background:url(https://gw.alicdn.com/tps/TB133nLPVXXXXboaVXXXXXXXXXX-326-60.png) no-repeat center top;
+			background-size: 100% 100%;
+			height:0.8rem;
+		}
+		.hl-right{
+			background:url(https://gw.alicdn.com/tps/TB1mJQgPVXXXXaoXVXXXXXXXXXX-325-60.png) no-repeat center top;
+			background-size: 100% 100%;
+			height:0.8rem;
+		}
+		.logohead{
+			width: 1.73rem;
+			height: 2.04rem;
+			position: absolute;
+			top:-0.9rem;left: 0.3rem;
+		}
+		.hl-contant{
+			background: #fff;
+			border-bottom-left-radius: 0.3rem;
+			border-bottom-right-radius: 0.3rem;
+			position: relative;
+			padding-top: 0.33rem;
+			padding-bottom:0.5rem; 
+		}
+		.pro-pic{
+			width: 4.17rem;
+			float: left;
+			margin-left: 0.26rem;
+		}
+		.pro-info{
+			width: 4.8rem;
+			margin-left: 0.26rem;
+			float: left;
+		}
+		.pro-tit{
+			font-size: 0.49rem;
+			list-style: 0.58rem;
+			color: #8a5f3b;
+			font-weight: bold;
+			border-bottom: 1px dotted #808080;
+		}
+		.pro-des-one{
+			width: 2.37rem;
+			height: 0.49rem;
+			line-height: 0.49rem;
+			text-align: center;
+			background: url(https://gw.alicdn.com/tps/TB11nAtPVXXXXbkXpXXXXXXXXXX-178-34.png) no-repeat center top;
+			background-size: 100% 100%;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			color: #fff;
+			margin-top: 0.1rem;
+			font-size: 0.32rem;
+		}
+		.pro-des-two{
+			width: 4.1rem;
+			height: 0.45rem;
+			line-height: 0.45rem;
+			text-align: center;
+			background: url(https://gw.alicdn.com/tps/TB1poMCPVXXXXXlXpXXXXXXXXXX-308-34.png) no-repeat center top;
+			background-size: 100% 100%;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			color: #fff;
+			margin-top: 0.1rem;
+			font-size: 0.32rem;
+		}
+		.pro-des-blank{
+			height: 0.55rem;
+		}
+		.pro-des-two em{	
+			font-weight: bold;
+		}
+		.pro-safe{
+			width: 4.76rem;
+			border: 1px solid #e9e9e9;
+			padding: 0.26rem 0 0.26rem 0;
+			margin-top: 0.3rem;
+			position: relative;
+		}
+		.safe-money li{
+			width: 4.5rem;
+			margin-top: 0.17rem;
+			margin-left: 0.26rem;
+		}
+		.muchinfo{
+			font-size: 0.32rem;
+			line-height: 0.4rem;
+			color: #5c6985;
+		}
+		.muchinfo em{
+			font-size:0.24rem;
+			line-height: 0.4rem; 
+		}
+		.muchpower{
+			display: inline-block;
+			background: url(https://gw.alicdn.com/tps/TB1_OUuPVXXXXcIXpXXXXXXXXXX-127-23.png) no-repeat center top;
+			background-size: 100% 100%;
+			width: 2rem;
+			height: 0.40rem;
+			font-size: 0.24rem;
+			line-height: 0.40rem;
+			text-align: center;
+			color: #fff;
+			position: relative;
+			top:-0.06rem;			
+		}
+		.logoinfo{
+			width: 2.82rem;
+			height: 0.41rem;
+			background:url(https://gw.alicdn.com/tps/TB17nQpPVXXXXaoXFXXXXXXXXXX-212-31.png) no-repeat center top;
+			background-size: 100% 100%;
+			font-size: 0.24rem;
+			line-height: 0.41rem;
+			text-align: center;
+			position: absolute;
+			top:-0.2rem;left: 1rem;
+			color: #8e8e8e;
+		}
+		.profree{
+			width: 9.6rem;
+			height: 0.96rem;
+		}
+		.protactbtn{
+			width: 8.09rem;
+			height: 1.13rem;
+			background:url(https://gw.alicdn.com/tps/TB1AEMnPVXXXXbmXFXXXXXXXXXX-607-85.png) no-repeat center top;
+			background-size: 100% 100%;
+			font-size: 0.61rem;
+			line-height: 1.13rem;
+			text-align: center;
+			margin: 0 auto;
+			color: #fff;
+			font-weight: bold;
+		}
+		.footer{
+			width: 96%;
+			margin: 0 auto;
+			height: 6.3rem;
+		}
+	</style>
+</head>
+<body>
+<div class="wb-hl-wrap">
+	<div class="hl-banner">
+		<img src="https://gw.alicdn.com/tps/TB1QPf1PVXXXXbLaXXXXXXXXXXX-750-513.jpg" alt="版头" />
+	</div>
+	<div class="hl-main">
+		<ul class="pro-list">
+			<li class="pro-kind">
+				<div class="hl-header">
+					<p class="title clearfix">
+						<span class="f-tit">餐饮店主</span>
+						<span class="line"></span>
+						<span class="z-tit">保这个就够了</span>
+					</p>
+					<ul class="logolist clearfix">
+						<li class="logokind hl-left">担心客人吃坏肚子</li>
+						<li class="logokind hl-right">担心客人投诉菜里有异物</li>
+						<li class="logokind hl-left">担心客人滑倒、烫伤</li>
+						<li class="logokind hl-right">本来利润就薄，还得赔钱</li>
+					</ul>
+					<img src="https://gw.alicdn.com/tps/TB1.nwqPVXXXXakXFXXXXXXXXXX-130-153.png" alt="头像" class="logohead" />
+				</div>
+				<div class="hl-contant clearfix">
+					<div class="pro-pic">
+						<img src="https://gw.alicdn.com/tps/TB1mhgFPVXXXXaCXXXXXXXXXXXX-313-283.png" alt="图片" />
+					</div>
+					<div class="pro-info">
+						<p class="pro-tit">口碑放心吃</p>
+						<p class="pro-des-one">1天不到1块钱</p>
+						<p class="pro-des-two"><em>赠:</em>顾客到店人身财产保障</p>
+						<div class="pro-safe">
+							<ul class="safe-money">
+								<li>
+									<p class="howmuch">
+										<span class="muchinfo"><em>单 次 卡:</em>保10万</span>
+										<span class="muchpower">保障单次事故</span>
+									</p>
+								</li>
+								<li>
+									<p class="howmuch">
+										<span class="muchinfo"><em>不限卡次:</em>保30万</span>
+										<span class="muchpower">不限理赔次数</span>
+									</p>
+								</li>
+							</ul>
+							<p class="logoinfo">低价or实惠由你选</p>
+						</div>
+					</div>
+					<img src="https://gw.alicdn.com/tps/TB1puEaPVXXXXX3aXXXXXXXXXXX-720-72.png" class="profree" />
+					<a href="alipays://platformapi/startapp?appId=20000936&url=%2Fwww%2Fitem.html%3FbizScenario%3DF0050000001000005966-1.0002-wx123%26prodId%3DF0050000001000005966" target="_blank" class="protactbtn" data-seed="enter:我要保" data-mtr-prodId="{{id}}">我要保</a>
+				</div>
+			</li>
+			<li class="pro-kind">
+				<div class="hl-header">
+					<p class="title clearfix">
+						<span class="f-tit">开门迎客</span>
+						<span class="line"></span>
+						<span class="z-tit">有这个就靠谱</span>
+					</p>
+					<ul class="logolist clearfix">
+						<li class="logokind hl-left">担心客人摔伤、滑倒、出意外</li>
+						<li class="logokind hl-right">客人把贵重物品摔坏，要我陪</li>
+						<li class="logokind hl-left">客人要告我，法律费用太昂贵</li>
+						<li class="logokind hl-right">做生意就是做口碑，意外难料</li>
+					</ul>
+					<img src="https://gw.alicdn.com/tps/TB1WugaPVXXXXcUXVXXXXXXXXXX-133-153.png" alt="头像" class="logohead" />
+				</div>
+				<div class="hl-contant clearfix">
+					<div class="pro-pic">
+						<img src="https://gw.alicdn.com/tps/TB1mhgFPVXXXXaCXXXXXXXXXXXX-313-283.png" alt="图片" />
+					</div>
+					<div class="pro-info">
+						<p class="pro-tit">口碑放心吃</p>
+						<p class="pro-des-one">1天低至6毛钱</p>
+						<p class="pro-des-blank"></p>
+						<div class="pro-safe">
+							<ul class="safe-money">
+								<li>
+									<p class="howmuch">
+										<span class="muchinfo"><em>单 次 卡:</em>保10万</span>
+										<span class="muchpower">保障单次事故</span>
+									</p>
+								</li>
+								<li>
+									<p class="howmuch">
+										<span class="muchinfo"><em>不限卡次:</em>保30万</span>
+										<span class="muchpower">不限理赔次数</span>
+									</p>
+								</li>
+							</ul>
+							<p class="logoinfo">低价or实惠由你选</p>
+						</div>
+					</div>
+					<img src="https://gw.alicdn.com/tps/TB1puEaPVXXXXX3aXXXXXXXXXXX-720-72.png" class="profree" />
+					<a href="alipays://platformapi/startapp?appId=20000936&url=%2Fwww%2Fitem.html%3FbizScenario%3DF0050000001000005968-1.0002-wx123%26prodId%3DF0050000001000005968" target="_blank" class="protactbtn" data-seed="enter:我要保" data-mtr-prodId="{{id}}">我要保</a>
+				</div>
+			</li>
+			<li class="pro-kind">
+				<div class="hl-header">
+					<p class="title clearfix">
+						<span class="f-tit f-tit-three">无社保</span>
+						<span class="line"></span>
+						<span class="z-tit">保员工选这个</span>
+					</p>
+					<ul class="logolist clearfix">
+						<li class="logokind hl-left">员工上下班，安全我有责任</li>
+						<li class="logokind hl-right">厨师烫伤，切伤，生意受影响</li>
+						<li class="logokind hl-left">业务员常出差，旅途意外多发</li>
+						<li class="logokind hl-right">相当个好老板，留住我的员工</li>
+					</ul>
+					<img src="https://gw.alicdn.com/tps/TB1AJfPPVXXXXakaVXXXXXXXXXX-133-153.png" alt="头像" class="logohead" />
+				</div>
+				<div class="hl-contant clearfix">
+					<div class="pro-pic">
+						<img src="https://gw.alicdn.com/tps/TB1mhgFPVXXXXaCXXXXXXXXXXXX-313-283.png" alt="图片" />
+					</div>
+					<div class="pro-info">
+						<p class="pro-tit">口碑放心吃</p>
+						<p class="pro-des-one">人均低至9元</p>
+						<p class="pro-des-blank"></p>
+						<div class="pro-safe">
+							<ul class="safe-money">
+								<li>
+									<p class="howmuch">
+										<span class="muchinfo"><em>保期灵活:</em>1个月、6个月、1年</span>
+
+									</p>
+								</li>
+								<li>
+									<p class="howmuch">
+										<span class="muchinfo"><em>不 记 名:</em>5人起保</span>
+										
+									</p>
+								</li>
+							</ul>
+							<p class="logoinfo">工伤意外止损</p>
+						</div>
+					</div>
+					<img src="https://gw.alicdn.com/tps/TB1puEaPVXXXXX3aXXXXXXXXXXX-720-72.png" class="profree" />
+					<a href="alipays://platformapi/startapp?appId=20000936&url=%2Fwww%2Fitem.html%3FbizScenario%3DF0070100001000001907-1.0006-12345%26prodId%3DF0070100001000001907" target="_blank" class="protactbtn" data-seed="enter:我要保" data-mtr-prodId="{{id}}">我要保</a>
+				</div>
+			</li>
+			<li class="pro-kind">
+				<div class="hl-header">
+					<p class="title clearfix">
+						<span class="f-tit f-tit-three">防火灾</span>
+						<span class="line"></span>
+						<span class="z-tit">花小钱买心安</span>
+					</p>
+					<ul class="logolist clearfix">
+						<li class="logokind hl-left">火灾爆炸，后果不堪设想</li>
+						<li class="logokind hl-right">很多保险公司不保我们小商家</li>
+						<li class="logokind hl-left">火灾以后，营业中断收入中断</li>
+						<li class="logokind hl-right">一旦发生火灾，损失无法承担</li>
+					</ul>
+					<img src="https://gw.alicdn.com/tps/TB1lVQIPVXXXXX6XXXXXXXXXXXX-133-155.png" alt="头像" class="logohead" />
+				</div>
+				<div class="hl-contant clearfix">
+					<div class="pro-pic">
+						<img src="https://gw.alicdn.com/tps/TB1mhgFPVXXXXaCXXXXXXXXXXXX-313-283.png" alt="图片" />
+					</div>
+					<div class="pro-info">
+						<p class="pro-tit">口碑放心吃</p>
+						<p class="pro-des-one">1个月不到20元</p>
+						<p class="pro-des-blank"></p>
+						<div class="pro-safe">
+							<ul class="safe-money">
+								<li>
+									<p class="howmuch">
+										<span class="muchinfo"><em>保期灵活:</em>1个月、6个月、1年</span>
+
+									</p>
+								</li>
+								<li>
+									<p class="howmuch">
+										<span class="muchinfo"><em>保额多选:</em>10万到200万</span>
+										
+									</p>
+								</li>
+							</ul>
+							<p class="logoinfo">免保前验标</p>
+						</div>
+					</div>
+					<img src="https://gw.alicdn.com/tps/TB1puEaPVXXXXX3aXXXXXXXXXXX-720-72.png" class="profree" />
+					<a href="alipays://platformapi/startapp?appId=20000936&url=%2Fwww%2Fitem.html%3FbizScenario%3DF0070100001000001907-1.0006-12345%26prodId%3DF0070100001000001907" target="_blank" class="protactbtn" data-seed="enter:我要保" data-mtr-prodId="{{id}}"
+>我要保</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="footer">
+		<img src="https://gw.alicdn.com/tps/TB1sXH3PVXXXXbFaXXXXXXXXXXX-720-447.png" alt="图片" />
+	</div>
+</div>
+<script>
+!function(a){function b(){var b=g.getBoundingClientRect().width;b/c>540&&(b=540*c),a.rem=b/10,g.style.fontSize=a.rem+"px"}var c,d,e,f=a.document,g=f.documentElement,h=f.querySelector('meta[name="viewport"]'),i=f.querySelector('meta[name="flexible"]');if(h){console.warn("将根据已有的meta标签来设置缩放比例");var j=h.getAttribute("content").match(/initial\-scale=(["']?)([\d\.]+)\1?/);j&&(d=parseFloat(j[2]),c=parseInt(1/d))}else if(i){var j=i.getAttribute("content").match(/initial\-dpr=(["']?)([\d\.]+)\1?/);j&&(c= 
+parseFloat(j[2]),d=parseFloat((1/c).toFixed(2)))}if(!c&&!d){var k=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),c=a.devicePixelRatio;c=k?c>=3?3:c>=2?2:1:1,d=1/c}if(g.setAttribute("data-dpr",c),!h)if(h=f.createElement("meta"),h.setAttribute("name","viewport"),h.setAttribute("content","initial-scale="+d+", maximum-scale="+d+", minimum-scale="+d+", user-scalable=no"),g.firstElementChild)g.firstElementChild.appendChild(h);else{var l=f.createElement("div");l.app 
+endChild(h),f.write(l.innerHTML)}a.dpr=c,a.addEventListener("resize",function(){clearTimeout(e),e=setTimeout(b,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(e),e=setTimeout(b,300))},!1),"complete"===f.readyState?f.body.style.fontSize=12*c+"px":f.addEventListener("DOMContentLoaded",function(){f.body.style.fontSize=12*c+"px"},!1),b()}(window);
+</script>
+<script src="https://as.alipayobjects.com/g/animajs/mtracker/3.1.0/seed.js"></script>
+</body>
+</html>
